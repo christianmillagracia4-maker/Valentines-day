@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Valentine's Day Niezah ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    text-align: center;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Container */
+.container {
+    padding-top: 80px;
+}
+
+/* Title */
+h1 {
+    font-size: 40px;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 10px white; }
+    to { text-shadow: 0 0 25px red; }
+}
+
+/* Button */
+button {
+    padding: 12px 25px;
+    font-size: 18px;
+    background: white;
+    color: #ff4e73;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #ff4e73;
+    color: white;
+}
+
+/* Video container */
+.video-wrapper {
+    display: none;
+    margin: 30px auto;
+    width: 90%;
+    max-width: 700px;
+}
+
+video {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+}
+
+/* Floating hearts */
+.heart {
+    position: fixed;
+    bottom: -50px;
+    font-size: 24px;
+    animation: floatUp linear infinite;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(-100vh); opacity: 0; }
+}
+
+/* Popup */
+.popup {
+    display: none;
+    background: white;
+    color: #ff4e73;
+    padding: 25px;
+    border-radius: 20px;
+    width: 85%;
+    max-width: 400px;
+    margin: 20px auto;
+    box-shadow: 0 0 30px rgba(0,0,0,0.4);
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Happy Valentine's Day, Niezah ❤️</h1>
+    <button onclick="startSurprise()">Open My Heart 💌</button>
+
+    <!-- Video Section -->
+    <div class="video-wrapper" id="videoWrapper">
+        <video id="bgVideo" controls loop>
+            <source src="angel baby.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <!-- Love Letter -->
+    <div class="popup" id="loveLetter">
+        <h2>My Dearest Niezah 💖</h2>
+        <p>
+            You are my Angel Baby, my happiness, and my forever.
+            Every heartbeat whispers your name.
+            I love you more than words can explain.
+            Happy Valentine's Day, my love ❤️
+        </p>
+    </div>
+</div>
+
+<!-- Music -->
+<audio id="bgMusic" loop>
+    <source src="angelbaby.mp4" type="audio/mp4">
+</audio>
+
+<script>
+// Floating hearts
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "💖";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (3 + Math.random() * 5) + "s";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 8000);
+}
+setInterval(createHeart, 400);
+
+// Start surprise
+function startSurprise() {
+    document.getElementById("videoWrapper").style.display = "block";
+    document.getElementById("loveLetter").style.display = "block";
+    document.getElementById("bgVideo").play();
+    document.getElementById("bgMusic").play();
+}
+</script>
+
+</body>
+</
